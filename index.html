@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PONG ARENA | Jogo Arcade</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="logo">PONG<span>ARENA</span></div>
+        <div class="status">● SISTEMA ONLINE</div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <p class="tag">ARCADE CLASSIC EXPERIENCE</p>
+
+            <h1>DOMINE A <span>ARENA.</span></h1>
+
+            <p class="description">
+                Prepare-se para uma partida de Pong!
+                Use seus reflexos e marque mais pontos que seu adversário.
+            </p>
+        </section>
+
+        <section class="game-panel">
+
+            <div class="game-header">
+                <div>
+                    <span class="small-label">MODO DE JOGO</span>
+                    <h2 id="modeTitle">Jogador vs Computador</h2>
+                </div>
+
+                <div class="game-status" id="gameStatus">
+                    AGUARDANDO
+                </div>
+            </div>
+
+            <div class="scoreboard">
+
+                <div class="player-score">
+                    <span>JOGADOR 1</span>
+                    <strong id="score1">0</strong>
+                </div>
+
+                <div class="score-divider">:</div>
+
+                <div class="player-score">
+                    <span id="player2Name">COMPUTADOR</span>
+                    <strong id="score2">0</strong>
+                </div>
+
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="800" height="450"></canvas>
+
+                <div class="game-overlay" id="overlay">
+                    <div class="overlay-content">
+                        <div class="play-icon">▶</div>
+                        <h2 id="overlayTitle">PRONTO PARA JOGAR?</h2>
+                        <p id="overlayText">
+                            Clique no botão abaixo para começar.
+                        </p>
+                        <button id="overlayButton" class="primary-button">
+                            INICIAR PARTIDA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+
+                <button id="startButton" class="primary-button">
+                    ▶ INICIAR
+                </button>
+
+                <button id="pauseButton" class="secondary-button">
+                    Ⅱ PAUSAR
+                </button>
+
+                <button id="restartButton" class="secondary-button">
+                    ↻ REINICIAR
+                </button>
+
+            </div>
+
+            <div class="settings">
+
+                <div class="setting-item">
+                    <label for="gameMode">MODO</label>
+
+                    <select id="gameMode">
+                        <option value="computer">Contra computador</option>
+                        <option value="player">Dois jogadores</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="difficulty">DIFICULDADE</label>
+
+                    <select id="difficulty">
+                        <option value="easy">Fácil</option>
+                        <option value="medium" selected>Médio</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="winningScore">PONTUAÇÃO</label>
+
+                    <select id="winningScore">
+                        <option value="5">5 pontos</option>
+                        <option value="10" selected>10 pontos</option>
+                        <option value="15">15 pontos</option>
+                        <option value="20">20 pontos</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="instructions">
+
+            <h2>COMO JOGAR</h2>
+
+            <div class="instruction-grid">
+
+                <div class="instruction-card">
+                    <div class="key">W</div>
+                    <h3>Subir</h3>
+                    <p>Movimente a raquete para cima.</p>
+                </div>
+
+                <div class="instruction-card">
+                    <div class="key">S</div>
+                    <h3>Descer</h3>
+                    <p>Movimente a raquete para baixo.</p>
+                </div>
+
+                <div class="instruction-card">
+                    <div class="key">↑ ↓</div>
+                    <h3>Jogador 2</h3>
+                    <p>Use as setas no modo de dois jogadores.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2026 PONG ARENA — PROJETO DE LÓGICA DE PROGRAMAÇÃO</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
