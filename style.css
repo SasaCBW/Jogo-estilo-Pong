@@ -1,0 +1,363 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --background: #080b14;
+    --panel: #111827;
+    --cyan: #00f5d4;
+    --purple: #a855f7;
+    --white: #f8fafc;
+    --muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #202a3c;
+    background: #0b1020;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.status {
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.intro {
+    text-align: center;
+    padding: 65px 15px 40px;
+}
+
+.tag {
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+    letter-spacing: 2px;
+}
+
+.intro h1 span {
+    color: var(--cyan);
+}
+
+.description {
+    color: var(--muted);
+    max-width: 560px;
+    margin: 18px auto 0;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.game-panel {
+    background: var(--panel);
+    border: 1px solid #273449;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 15px 50px #0005;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.small-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+.game-header h2 {
+    font-size: 17px;
+    margin-top: 7px;
+}
+
+.game-status {
+    font-size: 10px;
+    color: var(--cyan);
+    border: 1px solid #00f5d455;
+    padding: 9px 13px;
+    border-radius: 30px;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    padding: 25px 0;
+}
+
+.player-score {
+    text-align: center;
+}
+
+.player-score span {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+.player-score strong {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 42px;
+    color: var(--cyan);
+    margin-top: 5px;
+}
+
+.score-divider {
+    font-family: 'Orbitron', sans-serif;
+    color: #475569;
+    font-size: 35px;
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #34445d;
+    background: #050a14;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    background: #080b14df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-overlay.hidden {
+    display: none;
+}
+
+.overlay-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(17px, 3vw, 25px);
+    margin: 15px 0;
+}
+
+.overlay-content p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.play-icon {
+    font-size: 30px;
+    color: var(--cyan);
+}
+
+.game-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 22px 0;
+}
+
+button, select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: .25s;
+}
+
+.primary-button {
+    background: var(--cyan);
+    color: #07121b;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 22px;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.primary-button:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: #202c40;
+    color: white;
+    border: 1px solid #34445d;
+    border-radius: 7px;
+    padding: 13px 18px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.secondary-button:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.settings {
+    border-top: 1px solid #273449;
+    padding-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.setting-item label {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.setting-item select {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background: #0b1220;
+    border: 1px solid #34445d;
+    border-radius: 6px;
+    outline: none;
+}
+
+.setting-item select:focus {
+    border-color: var(--cyan);
+}
+
+.instructions {
+    padding: 55px 0;
+}
+
+.instructions h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.instruction-card {
+    background: #111827;
+    border: 1px solid #273449;
+    padding: 22px;
+    border-radius: 10px;
+}
+
+.key {
+    display: inline-block;
+    background: #202c40;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 9px 14px;
+    border-radius: 5px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.instruction-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.instruction-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    border-top: 1px solid #202a3c;
+    color: #64748b;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        padding: 0 5%;
+    }
+
+    .game-panel {
+        padding: 14px;
+    }
+
+    .scoreboard {
+        gap: 35px;
+    }
+
+    .settings {
+        grid-template-columns: 1fr;
+    }
+
+    .instruction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-controls button {
+        flex: 1;
+    }
+
+    .status {
+        font-size: 8px;
+    }
+}
